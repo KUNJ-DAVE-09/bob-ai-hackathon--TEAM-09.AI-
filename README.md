@@ -118,15 +118,18 @@ cp .env.example .env
 
 > Be honest — judges appreciate transparency over overclaiming.
 
-- [Limitation 1: e.g., "Authentication is mocked — not production-ready"]
-- [Limitation 2: e.g., "Only tested on Chrome"]
-- [Limitation 3: e.g., "Feature X is scaffolded but not fully implemented"]
+- Uses simulated/generated data — no live ERP, TMS, or IoT API connections in this demo
+- AI Copilot uses rule-based intent matching (not a full LLM) for hackathon speed
+- No authentication layer — demo mode only, not production-ready
+- In-memory state only — refreshing the page resets the entire simulation
+- Optimized for desktop browsers (Chrome/Firefox/Edge); mobile layout is functional but not polished
+- Cold-chain IoT data is randomly generated, not sourced from real sensor hardware
 
 ---
 
 ## 🏅 What We're Most Proud Of
 
-[Tell the judges what part of your submission is strongest and worth paying close attention to.]
+The **Cold-Chain IoT Monitoring module** — live Chart.js sensor streams update every 2 seconds, automatically detecting excursions against WHO/FDA thresholds and classifying their regulatory severity in real time. The **AI Copilot** accurately handles 20+ distinct operational query types using intent detection over live simulated state, giving operations teams instant natural-language answers without digging through dashboards. And the **Recovery Plan Generator** produces a structured, professional executive document in one click — something a supply chain manager could actually hand to leadership during a crisis.
 
 
 
