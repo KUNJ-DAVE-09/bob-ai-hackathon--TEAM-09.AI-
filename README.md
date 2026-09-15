@@ -108,7 +108,7 @@ cp .env.example .env
 | 📹 Demo Video | [https://drive.google.com/file/d/1PyxqnKA-3XrTrG7h35XRdGccJJh-TOQN/view?usp=sharing](https://drive.google.com/file/d/1PyxqnKA-3XrTrG7h35XRdGccJJh-TOQN/view?usp=sharing) |
 | 🌐 Live Demo | [https://bob-ai-hackathon-team-09-ai-supplyguard.onrender.com](https://bob-ai-hackathon-team-09-ai-supplyguard.onrender.com) |
 | 🖼️ Screenshots | [See demo/screenshots/](demo/screenshots/) |
-| 📊 Presentation | [See presentation/slides.pdf](presentation/) |
+| 📊 Presentation | [https://1drv.ms/b/c/BFAD2F7354E8836E/IQADX-LH7fpsQ6jO29vdmB8WAelhRyv6oalIEHaJ9qEoN5U?e=S7ZpRT](https://1drv.ms/b/c/BFAD2F7354E8836E/IQADX-LH7fpsQ6jO29vdmB8WAelhRyv6oalIEHaJ9qEoN5U?e=S7ZpRT) |
 
 ---
 
