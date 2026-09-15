@@ -80,26 +80,25 @@
 ```
 
 ---
-
-## ⚡ How to Run
+# ⚡ How to Run
 
 > **Copy these exact steps from your [`docs/setup-guide.md`](docs/setup-guide.md)**
 
 ```bash
-# Clone the repo
-git clone https://github.com/[your-team]/bob-ai-hackathon-supplyguard.git
-cd bob-ai-hackathon-supplyguard/src
+# 1. Clone the repo
+git clone https://github.com/[your-repo].git
+cd [your-repo]
 
-# Option 1: Open directly in browser
-open index.html
+# 2. Install dependencies
+[your install command here]
 
-# Option 2: Serve locally (Python)
-python -m http.server 8080
-# Then open http://localhost:8080
+# 3. Configure environment
+cp .env.example .env
+# Edit .env with your values
 
-# Option 3: Serve locally (Node)
-npx serve .
-# Then open http://localhost:3000
+# 4. Run the project
+[your run command here]
+```
 
 ---
 
@@ -107,8 +106,8 @@ npx serve .
 
 | Artifact | Link |
 |---|---|
-| 📹 Demo Video | [See demo/demo-video-link.txt](demo/demo-video-link.txt) |
-| 🌐 Live Demo | https://bob-ai-hackathon-team-09-ai-supplyguard.onrender.com |
+| 📹 Demo Video | [See demo/demo-video-link.txt]([demo/demo-video-link.txt](https://drive.google.com/file/d/1PyxqnKA-3XrTrG7h35XRdGccJJh-TOQN/view?usp=sharing)) |
+| 🌐 Live Demo | [See demo/live-demo-url.txt]([demo/live-demo-url.txt](https://bob-ai-hackathon-team-09-ai-supplyguard.onrender.com)) |
 | 🖼️ Screenshots | [See demo/screenshots/](demo/screenshots/) |
 | 📊 Presentation | [See presentation/slides.pdf](presentation/) |
 
@@ -118,14 +117,16 @@ npx serve .
 
 > Be honest — judges appreciate transparency over overclaiming.
 
-- [Limitation 1: e.g., "- The AI Copilot matches keywords, it does not use a real AI model like ChatGPT or watsonx"]
+- [Limitation 1: e.g., "Authentication is mocked — not production-ready"]
 - [Limitation 2: e.g., "Only tested on Chrome"]
-- [Limitation 3: e.g., "No live data, only factual data due to no api integratiom"]
+- [Limitation 3: e.g., "Feature X is scaffolded but not fully implemented"]
 
 ---
 
 ## 🏅 What We're Most Proud Of
 
-[The *Cold-Chain IoT monitoring module* — live Chart.js sensor streams update every 2 seconds, automatically detecting excursions against WHO/FDA thresholds and classifying their regulatory severity. The *AI Copilot* accurately answers 20+ distinct operational query types using intent detection over live simulated state. And the *Recovery Plan generator* produces a structured, professional executive document in one click.]
+[Tell the judges what part of your submission is strongest and worth paying close attention to.]
+
+---
 
 ---
