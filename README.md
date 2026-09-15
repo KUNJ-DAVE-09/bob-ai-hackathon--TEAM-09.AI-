@@ -55,11 +55,13 @@
 
 | Category | Technologies |
 |---|---|
-| **Languages** | [HTML5, CSS3, Vanilla JS (ES2022)] |
-| **Frameworks** | [e.g., FastAPI, React] |
-| **IBM Technologies** | [e.g., watsonx.ai, IBM Bob, IBM Cloud] |
-| **Databases** | [e.g., PostgreSQL, Redis] |
-| **Other** | [e.g., Docker, GitHub Actions] |
+| **Languages** | HTML5, CSS3, Vanilla JavaScript (ES2022) |
+| **Frameworks / Libraries** | Chart.js 4.4 |
+| **IBM Technologies** | IBM Bob (AI Copilot) |
+| **Data Layer** | Simulated real-time IoT streams, in-memory state |
+| **Decision Engine** | Rule-based AI (risk classification, rerouting, fleet optimizer) |
+| **Deployment** | Render (https://bob-ai-hackathon-team-09-ai-supplyguard.onrender.com) |
+| **Version Control** | Git, GitHub |
 
 ---
 
