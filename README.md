@@ -81,25 +81,31 @@
 └── submission.yaml       # Structured submission metadata
 ```
 
----# ⚡ How to Run
+---
 
-> **Copy these exact steps from your [`docs/setup-guide.md`](docs/setup-guide.md)**
+## ⚡ How to Run
+
+No build step. No dependencies to install. No environment variables required.
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/[your-repo].git
-cd [your-repo]
+git clone https://github.com/KUNJ-DAVE-09/bob-ai-hackathon--TEAM-09.AI-.git
+cd bob-ai-hackathon--TEAM-09.AI-/supplyguard/src
 
-# 2. Install dependencies
-[your install command here]
+# 2a. Open directly in browser
+open index.html
 
-# 3. Configure environment
-cp .env.example .env
-# Edit .env with your values
+# 2b. Or serve locally with Python
+python -m http.server 8080
+# Then open http://localhost:8080
 
-# 4. Run the project
-[your run command here]
+# 2c. Or serve locally with Node
+npx serve .
+# Then open http://localhost:3000
 ```
+
+Or just visit the live deployment:
+**https://bob-ai-hackathon-team-09-ai-supplyguard.onrender.com**
 
 ---
 
