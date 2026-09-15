@@ -9,6 +9,21 @@ team:
     - "Khushboo Yadav"
     - "Harshi Bhalani"
 
+submission:
+  title: "SupplyGuard AI — Supply Chain Disruption Assistant"
+  problem_statement: >
+    Supply chain disruptions — weather events, port strikes, geopolitical crises — cascade
+    across hundreds of active shipments in ways that are impossible to track manually.
+    Fleet assets sit idle while other routes are overloaded, and cold-chain shipments
+    (vaccines, perishables) face undetected temperature excursions discovered only at
+    delivery, by which time a $500K+ cargo is already lost.
+  solution_summary: >
+    SupplyGuard AI is an IBM Bob-powered supply chain operations center that detects active
+    disruptions, identifies every affected shipment with AI-driven risk scoring (CRITICAL to LOW),
+    recommends optimal reroutes with cost/time trade-offs, redeploys idle fleet assets via a
+    proximity optimizer, monitors cold-chain IoT sensor streams in real time, and provides a
+    natural-language AI Copilot and one-click executive recovery plan generator.
+
 project:
   name: "SupplyGuard AI"
   tagline: "IBM Bob-powered supply chain disruption operations center"
