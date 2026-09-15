@@ -8,7 +8,7 @@
 
 | Field | Value |
 |---|---|
-| **Team Name** | [TEAM--O9.AI] |
+| **Team Name** | [TEAM-O9.AI] |
 | **Track** | [AI / DevOps / Sustainability / Open] |
 | **Team Lead** | [KUNJ-DAVE] — [KUNJDAVE2703@GMAIL.COM] |
 | **Members** | [NEEV-GOHEL], [KHUSHBOO-YADAV], [HARSHI-BHALANI] |
