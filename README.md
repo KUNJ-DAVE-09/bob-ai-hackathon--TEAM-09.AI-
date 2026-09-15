@@ -8,10 +8,10 @@
 
 | Field | Value |
 |---|---|
-| **Team Name** | [Your Team Name] |
+| **Team Name** | [TEAM--O9.AI] |
 | **Track** | [AI / DevOps / Sustainability / Open] |
-| **Team Lead** | [Name] — [email@ibm.com] |
-| **Members** | [Name 1], [Name 2], [Name 3] |
+| **Team Lead** | [KUNJ-DAVE] — [KUNJDAVE2703@GMAIL.COM] |
+| **Members** | [NEEV-GOHEL], [KHUSHBOO-YADAV], [HARSHI-BHALANI] |
 
 ---
 
