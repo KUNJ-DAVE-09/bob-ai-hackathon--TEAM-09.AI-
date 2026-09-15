@@ -19,7 +19,7 @@
 
 > In 2–3 sentences: What problem does your project solve? Who experiences this problem?
 
-[Describe the real-world problem your project addresses. Be specific about who the user is and what pain point they face.]
+[Supply chain disruptions — weather events, port strikes, geopolitical crises — cascade across hundreds of active shipments in ways that are impossible to track manually. Fleet assets (trucks, containers, vessels) sit idle while other routes are overloaded. Cold-chain shipments (vaccines, perishables) are especially vulnerable — a single temperature excursion across any leg can spoil a $500K+ cargo, but breaches are only discovered at delivery when it is too late.]
 
 ---
 
@@ -27,25 +27,35 @@
 
 > In 2–3 sentences: What did you build? How does it solve the problem above?
 
-[Describe your solution clearly. Explain the core mechanism — what makes it work.]
+[*SupplyGuard AI* is an IBM Bob-powered supply chain operations center that provides end-to-end disruption response:
+
+1. *Detects* active disruptions and classifies their severity in real time
+2. *Identifies* every affected shipment with AI-driven risk scoring (CRITICAL → LOW)
+3. *Recommends* optimal reroutes and carrier alternatives with cost/time trade-offs
+4. *Redeploys* idle fleet assets via a proximity + capacity optimizer
+5. *Monitors* cold-chain IoT sensor streams and flags temperature excursions before delivery
+6. *Answers* operations questions via a natural-language AI Copilot
+7. *Generates* executive recovery plans with full KPI impact summaries
+]
 
 ---
 
 ## ✨ Key Features
 
-- **Feature 1:** [Brief description — e.g., "Real-time anomaly detection using watsonx.ai"]
-- **Feature 2:** [Brief description]
-- **Feature 3:** [Brief description]
-- **Feature 4:** [Optional]
-- **Feature 5:** [Optional]
-
+- **Feature 1:** [ *Disruption Detection* — Weather, port, strike, and geopolitical event monitoring with severity bands]
+- **Feature 2:** [*Affected Shipment Analysis* — Risk classification engine (CRITICAL / HIGH / MEDIUM / LOW) based on cargo type, ETA, and route overlap]
+- **Feature 3:** [ *Smart Rerouting* — Multi-route comparison with cost, delay, and carrier reliability scores]
+- **Feature 4:** [ *Fleet Optimization* — Idle asset scanner with redeployment recommendations sorted by proximity]
+- **Feature 5:** [*Cold-Chain Monitoring* — Live IoT temperature stream with WHO/FDA regulatory excursion alerts]
+- **Feature 6:** [*AI Copilot* — Natural-language Q&A over live operational data]
+- **Feature 7:** [*Recovery Plan Generator* — One-click executive summary with action items and KPI projections]
 ---
 
 ## 🛠️ Tech Stack
 
 | Category | Technologies |
 |---|---|
-| **Languages** | [e.g., Python, TypeScript] |
+| **Languages** | [HTML5, CSS3, Vanilla JS (ES2022)] |
 | **Frameworks** | [e.g., FastAPI, React] |
 | **IBM Technologies** | [e.g., watsonx.ai, IBM Bob, IBM Cloud] |
 | **Databases** | [e.g., PostgreSQL, Redis] |
@@ -76,20 +86,20 @@
 > **Copy these exact steps from your [`docs/setup-guide.md`](docs/setup-guide.md)**
 
 ```bash
-# 1. Clone the repo
-git clone https://github.com/[your-repo].git
-cd [your-repo]
+# Clone the repo
+git clone https://github.com/[your-team]/bob-ai-hackathon-supplyguard.git
+cd bob-ai-hackathon-supplyguard/src
 
-# 2. Install dependencies
-[your install command here]
+# Option 1: Open directly in browser
+open index.html
 
-# 3. Configure environment
-cp .env.example .env
-# Edit .env with your values
+# Option 2: Serve locally (Python)
+python -m http.server 8080
+# Then open http://localhost:8080
 
-# 4. Run the project
-[your run command here]
-```
+# Option 3: Serve locally (Node)
+npx serve .
+# Then open http://localhost:3000
 
 ---
 
@@ -108,14 +118,14 @@ cp .env.example .env
 
 > Be honest — judges appreciate transparency over overclaiming.
 
-- [Limitation 1: e.g., "Authentication is mocked — not production-ready"]
+- [Limitation 1: e.g., "- The AI Copilot matches keywords, it does not use a real AI model like ChatGPT or watsonx"]
 - [Limitation 2: e.g., "Only tested on Chrome"]
-- [Limitation 3: e.g., "Feature X is scaffolded but not fully implemented"]
+- [Limitation 3: e.g., "No live data, only factual data due to no api integratiom"]
 
 ---
 
 ## 🏅 What We're Most Proud Of
 
-[Tell the judges what part of your submission is strongest and worth paying close attention to.]
+[The *Cold-Chain IoT monitoring module* — live Chart.js sensor streams update every 2 seconds, automatically detecting excursions against WHO/FDA thresholds and classifying their regulatory severity. The *AI Copilot* accurately answers 20+ distinct operational query types using intent detection over live simulated state. And the *Recovery Plan generator* produces a structured, professional executive document in one click.]
 
 ---
