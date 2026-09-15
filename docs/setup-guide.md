@@ -1,138 +1,83 @@
-# Setup Guide — SupplyGuard AI
+# Setup Guide
 
 ## Prerequisites
 
-| Requirement | Version | Purpose |
-|-------------|---------|---------|
-| Modern web browser | Chrome 90+, Firefox 88+, Edge 90+ | Run the application |
-| Python (optional) | 3.7+ | Local development server |
-| Node.js (optional) | 16+ | Alternative local server |
+None. SupplyGuard AI is a pure client-side application — no Node.js, no Python, no database, no environment variables required.
 
-**No npm install. No build step. No environment variables required for the demo.**
+All you need is a modern web browser (Chrome, Firefox, or Edge recommended).
 
 ---
 
-## Quick Start (30 seconds)
+## Option 1: Visit the Live Deployment (Fastest)
 
-### Option A — Open Directly in Browser (Simplest)
+Just open the link below in your browser — no setup needed:
+
+**https://bob-ai-hackathon-team-09-ai-supplyguard.onrender.com**
+
+---
+
+## Option 2: Run Locally
+
+### Step 1 — Clone the repository
 
 ```bash
-# Navigate to the src directory
-cd bob-ai-hackathon-supplyguard/src
+git clone https://github.com/KUNJ-DAVE-09/bob-ai-hackathon--TEAM-09.AI-.git
+cd bob-ai-hackathon--TEAM-09.AI-/supplyguard/src
+```
 
-# macOS
+### Step 2 — Open in browser
+
+**Direct open (simplest):**
+```bash
+# macOS / Linux
 open index.html
 
 # Windows
 start index.html
-
-# Linux
-xdg-open index.html
 ```
 
-> ⚠️ **Note:** Some browsers restrict ES module imports when opening `file://` URLs directly. If the app appears blank, use Option B or C instead.
-
----
-
-### Option B — Python Local Server (Recommended)
-
+**Or serve with Python (recommended to avoid CORS issues):**
 ```bash
-cd bob-ai-hackathon-supplyguard/src
-
-# Python 3
 python -m http.server 8080
-
-# Python 2 (fallback)
-python -m SimpleHTTPServer 8080
+# Then open http://localhost:8080
 ```
 
-Open your browser at: **http://localhost:8080**
-
----
-
-### Option C — Node.js Local Server
-
+**Or serve with Node.js:**
 ```bash
-cd bob-ai-hackathon-supplyguard/src
-
-# Install serve globally (one time)
-npm install -g serve
-
-# Start server
-serve . -p 3000
+npx serve .
+# Then open http://localhost:3000
 ```
 
-Open your browser at: **http://localhost:3000**
+---
+
+## What You'll See
+
+When the app loads:
+
+1. **Dashboard** — KPI summary cards and live disruption overview
+2. **Disruptions** — Active disruption events with severity classification
+3. **Shipments** — Risk-scored shipment list (CRITICAL → LOW)
+4. **Rerouting** — Alternative route recommendations per shipment
+5. **Fleet** — Idle asset scanner with redeployment recommendations
+6. **Cold-Chain** — Live IoT temperature sensor streams (updates every 2 seconds)
+7. **AI Copilot** — Type any supply chain question in natural language
+8. **Recovery Plan** — Click "Generate Plan" for a one-click executive summary
 
 ---
 
-## Verifying It Works
+## Using the AI Copilot
 
-Once the page loads, you should see:
+Click the **AI Copilot** tab and type any of these example queries:
 
-1. ✅ A dark-themed sidebar with 8 navigation items
-2. ✅ The **Dashboard** view with 6 KPI cards showing live numbers
-3. ✅ A pulsing green "Live Monitoring Active" indicator in the sidebar
-4. ✅ Numbers on the dashboard updating every ~5 seconds (live simulation)
-5. ✅ A notification bell with an active alert count
-
-If any of these are missing, check the **Troubleshooting** section below.
-
----
-
-## Demo Walkthrough
-
-Follow this sequence to see all features:
-
-| Step | View | What to Do |
-|------|------|-----------|
-| 1 | Dashboard | Review KPI cards and the live trend chart |
-| 2 | Disruptions | Click any disruption row to see its detail panel |
-| 3 | Affected Shipments | Use the risk filter (CRITICAL / HIGH) to see worst-affected cargo |
-| 4 | Rerouting | Click "View Alternatives" on any HIGH/CRITICAL shipment |
-| 5 | Fleet Assets | Click "Redeploy" on an IDLE asset |
-| 6 | Cold Chain | Watch live temperature charts — observe a breach trigger |
-| 7 | AI Copilot | Type: "How many critical shipments are affected?" |
-| 8 | Recovery Plan | Click "Generate Recovery Plan" and review the output |
+- `Which shipments are at critical risk?`
+- `Show me rerouting options for the Rotterdam disruption`
+- `Are there any cold-chain temperature excursions?`
+- `How many idle fleet assets do we have?`
+- `Generate a recovery plan summary`
+- `What is the current on-time delivery rate?`
 
 ---
 
-## Environment Variables
+## No Build Step
 
-No environment variables are needed for the demo. The `.env.example` file lists variables that would be needed for a production deployment with live API integrations.
-
-See `src/.env.example` for details.
-
----
-
-## Troubleshooting
-
-| Symptom | Cause | Fix |
-|---------|-------|-----|
-| Blank page after opening `index.html` | Browser blocks `file://` imports | Use Python or Node server (Options B/C) |
-| Charts not rendering | Chart.js CDN blocked | Ensure internet access, or download Chart.js locally and update the `<script>` tag |
-| "APP_STATE is not defined" in console | Scripts loaded out of order | Ensure `data.js` is loaded before view scripts — check `index.html` |
-| Sidebar navigation doesn't switch views | JavaScript error on load | Open browser DevTools (F12) → Console tab, share the error |
-| Numbers not updating | Simulation loop not starting | Check console for errors; hard-refresh with Ctrl+Shift+R |
-
----
-
-## File Structure
-
-```
-src/
-├── index.html          ← Entry point
-├── style.css           ← All styles (single file)
-├── data.js             ← Simulated data + state engine
-├── app.js              ← Router, nav, alerts, modal
-├── views/
-│   ├── dashboard.js    ← KPI overview
-│   ├── disruptions.js  ← Active disruption list
-│   ├── shipments.js    ← Affected shipment analysis
-│   ├── rerouting.js    ← Rerouting recommendations
-│   ├── fleet.js        ← Fleet asset optimizer
-│   ├── coldchain.js    ← Cold-chain IoT monitoring
-│   ├── copilot.js      ← AI Copilot chat
-│   └── recovery.js     ← Recovery plan generator
-└── .env.example        ← Production env var template
-```
+There is no `npm install`, no `webpack`, no `build` command. The source files in `src/` are the final files — open `index.html` and everything runs.

@@ -1,83 +1,64 @@
-# Solution Overview — SupplyGuard AI
+# Solution Overview
 
-## Core Mechanism
+## What We Built
 
-SupplyGuard AI is a **decision-support operations center** that transforms raw disruption signals into prioritized, actionable recovery workflows — reducing human time-to-action from hours to minutes.
-
-The system operates as a continuous loop:
-
-```
-Detect Disruption → Assess Impact → Classify Risk → Generate Options → Execute / Monitor
-```
-
-Every component feeds live state into a shared data layer that the AI Copilot can query in natural language, giving any team member — from operations analyst to C-suite — instant situational awareness without log-diving or report-pulling.
+**SupplyGuard AI** is an IBM Bob-powered supply chain operations center — a single-page web application that gives operations teams a real-time, AI-assisted command center for detecting, responding to, and recovering from supply chain disruptions.
 
 ---
 
-## The Seven Modules
+## How It Works
 
-### 1. Disruption Detection
-Incoming disruption events (weather, port, strike, geopolitical) are ingested and enriched with severity scoring based on geographic radius, duration, and historical impact patterns. Each disruption is geo-matched against active shipment routes in real time.
+### 1. 🚨 Disruption Detection
+The system continuously monitors for active disruptions — weather events, port closures, strikes, and geopolitical crises. Each disruption is classified by severity (CRITICAL / HIGH / MEDIUM / LOW) and displayed with affected routes, estimated delay, and impacted shipment count.
 
-### 2. Affected Shipment Analysis
-Every active shipment is evaluated against the disruption's impact zone using a multi-factor risk engine:
+### 2. 📦 Affected Shipment Analysis
+When a disruption is detected, SupplyGuard AI automatically identifies every shipment on the affected route and scores it for risk using a multi-factor engine that considers:
+- Cargo type (pharmaceuticals, perishables, standard)
+- Days until ETA
+- Route overlap percentage
+- Carrier reliability score
 
-```
-Risk = f(cargo_type, temp_sensitive, hours_to_delivery, priority, route_overlap, alternative_routes)
-```
+### 3. 🔀 Smart Rerouting
+For each affected shipment, the system generates 2–3 alternative route options ranked by a composite score of cost delta, additional delay, and carrier reliability. Operations teams can compare options side-by-side and select the optimal reroute.
 
-Outputs: CRITICAL / HIGH / MEDIUM / LOW classification per shipment, with the reasoning chain visible to operators.
+### 4. 🚛 Fleet Optimization
+The idle fleet scanner identifies all unassigned trucks, containers, and vessels across the network and ranks them by proximity to disruption nodes and available capacity — enabling rapid redeployment of stranded assets.
 
-### 3. Rerouting Engine
-For each affected shipment, the rerouting engine computes alternative paths using a weighted graph traversal that balances:
-- **Delay** (hours added vs. original ETA)
-- **Cost** (route premium + carrier rate delta)
-- **Carrier reliability** (historical on-time rate)
-- **Cargo compatibility** (temperature-controlled capacity, hazmat, etc.)
+### 5. 🌡 Cold-Chain IoT Monitoring
+A live sensor dashboard streams temperature readings every 2 seconds for all active cold-chain shipments. The system automatically compares readings against regulatory thresholds (WHO GDP: 2–8°C for vaccines, −20°C for biologics, 0–4°C for perishables) and triggers excursion alerts with regulatory severity classification before delivery.
 
-The top 3 alternatives are surfaced per shipment with a recommended choice and explicit trade-off summary.
+### 6. 🤖 AI Copilot (Powered by IBM Bob)
+A natural-language interface lets operations staff ask questions over live data:
+- *"Which shipments are at critical risk right now?"*
+- *"What's the best reroute for shipment SG-1042?"*
+- *"Are any cold-chain shipments showing temperature excursions?"*
+- *"Generate a recovery summary for the Rotterdam disruption."*
 
-### 4. Fleet Optimization
-Idle fleet assets are scanned and ranked for redeployment suitability based on:
-- Proximity to disruption-affected node
-- Load capacity vs. stranded cargo volume
-- Asset type compatibility (reefer availability for cold-chain)
-- Redeployment cost vs. estimated cargo value saved
+The Copilot handles 20+ distinct query types using intent detection over the live operational state.
 
-### 5. Cold-Chain Monitoring
-IoT sensor streams are ingested at 30-second intervals per shipment. Each reading is validated against:
-- Cargo-type threshold (configurable per WHO/FDA/USDA requirement)
-- Duration of excursion (single-point vs. sustained breach)
-- Regulatory severity classification (Advisory / Warning / Critical / Emergency)
-
-Alerts are fired within 2 sensor cycles (~60 seconds) of excursion onset — not at delivery.
-
-### 6. AI Copilot
-The natural-language copilot accepts free-text queries and resolves them against live operational state using intent classification. Supported intent categories: disruption status, shipment impact, rerouting recommendations, fleet availability, cold-chain alerts, KPI summaries, and recovery actions. The copilot provides sourced, data-backed answers rather than generic responses.
-
-### 7. Recovery Plan Generator
-One-click generation of a structured executive document covering: disruption summary, total financial exposure, shipment action matrix (by risk level), fleet deployment orders, cold-chain intervention summary, KPI impact projections, and a 72-hour recovery timeline.
+### 7. 📋 Recovery Plan Generator
+One click generates a structured executive recovery document including:
+- Active disruption summary
+- Affected shipment count and risk breakdown
+- Recommended actions with ownership
+- KPI impact projections (on-time delivery rate, revenue at risk, assets redeployed)
 
 ---
 
-## What Makes It Different
+## Why IBM Bob?
 
-| Naive Alternative | SupplyGuard AI Approach |
-|------------------|------------------------|
-| Alert-only systems (tell you something is wrong) | Full response loop: detect → classify → recommend → act |
-| Siloed views (shipments OR fleet OR cold-chain) | Unified operational picture across all data streams |
-| Static reports (generated once, go stale) | Live state — every number on screen reflects the current simulation |
-| Manual rerouting (analyst opens TMS, checks carrier, emails back) | Automated ranked alternatives with one-click accept |
-| Delivery-time excursion discovery | Sub-2-minute in-transit detection with regulatory classification |
+IBM Bob powers the AI Copilot — the natural-language layer that makes all of SupplyGuard AI's data accessible to operations staff without requiring them to navigate complex dashboards. Bob's intent detection and context awareness allow the Copilot to answer nuanced operational questions over live state, making it the most differentiating feature of the submission.
 
 ---
 
-## Key Design Decisions
+## Architecture Summary
 
-1. **No build toolchain** — The entire application is vanilla HTML/CSS/JS. A judge can open `index.html` and see a running system. No npm install, no build step, no server required.
+| Layer | What It Does |
+|---|---|
+| **UI (HTML/CSS/JS)** | Single-page operations dashboard with 7 functional modules |
+| **Data Engine** | In-memory simulated state — shipments, disruptions, fleet, IoT sensors |
+| **AI Copilot** | IBM Bob-powered intent detection and response generation |
+| **Decision Engine** | Rule-based risk scoring, rerouting optimizer, fleet matcher |
+| **Chart Layer** | Chart.js 4.4 live sensor streams and KPI visualizations |
 
-2. **Rule-based AI for hackathon speed** — The decision engines (risk classification, rerouting, fleet optimizer) use deterministic rule trees that are transparent, explainable, and fast. This is intentional: in production, these rules become the training labels for an ML model.
-
-3. **Simulated real-time data** — All sensor streams, disruption events, and shipment status changes are driven by a JavaScript simulation engine. This allows a convincing, dynamic demo without requiring live API integrations.
-
-4. **IBM Bob as the intelligence layer** — The AI Copilot is designed as the primary Bob integration point: natural-language operational queries route through Bob's reasoning capability to provide contextual, grounded answers against the live data state.
+See [architecture.md](architecture.md) for the full system diagram.

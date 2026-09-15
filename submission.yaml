@@ -1,42 +1,31 @@
 team:
-  name: "SupplyGuard AI"
+  name: "TEAM-09.AI"
   track: "AI"
   lead:
-    name: "Hackathon Lead"
-    email: "lead@supplyguard.ai"
+    name: "Kunj Dave"
+    email: "kunjdave2703@gmail.com"
   members:
-    - name: "Developer One"
-      email: "dev1@supplyguard.ai"
-    - name: "Developer Two"
-      email: "dev2@supplyguard.ai"
+    - "Neev Gohel"
+    - "Khushboo Yadav"
+    - "Harshi Bhalani"
 
-submission:
-  title: "SupplyGuard AI — Supply Chain Disruption Assistant"
-  problem_statement: >
-    Supply chain disruptions — weather events, port strikes, geopolitical crises —
-    cascade across hundreds of active shipments in ways that are impossible to track
-    manually. Fleet assets sit idle while other routes are overloaded, and cold-chain
-    shipments (vaccines, perishables) face catastrophic, undetected temperature excursions
-    that are only discovered at delivery — by which time a $500K+ cargo is already lost.
-  solution_summary: >
-    SupplyGuard AI is an IBM Bob-powered operations center that detects active disruptions,
-    identifies every affected shipment with AI-driven risk classification, recommends
-    optimal rerouting and carrier alternatives, redeploys idle fleet assets intelligently,
-    and monitors cold-chain IoT sensor streams in real time to catch temperature excursions
-    before delivery. A natural-language AI Copilot and an executive recovery plan generator
-    complete the end-to-end disruption response loop.
-  key_features:
-    - "Real-time disruption detection with severity classification (weather, port, geopolitical)"
-    - "AI risk scoring of all affected shipments (CRITICAL / HIGH / MEDIUM / LOW)"
-    - "Rerouting engine with cost/time trade-off recommendations and carrier alternatives"
-    - "Idle fleet asset redeployment optimizer with proximity and capacity matching"
-    - "Cold-chain IoT temperature monitoring with regulatory severity detection (WHO/FDA)"
-    - "Natural-language AI Copilot for operations Q&A and instant insights"
-    - "Executive Recovery Plan auto-generation with KPI impact summary"
-  tech_stack:
-    - "IBM Bob (AI Copilot integration)"
-    - "Vanilla JS (ES2022) — zero-framework, fully portable"
-    - "Chart.js 4.4 — live sensor charts and KPI visualizations"
-    - "HTML5 / CSS3 — responsive single-page application"
-    - "Simulated IoT sensor data streams (WebWorker-based)"
-    - "Rule-based AI decision engine (risk classification, rerouting, fleet optimization)"
+project:
+  name: "SupplyGuard AI"
+  tagline: "IBM Bob-powered supply chain disruption operations center"
+  repo: "https://github.com/KUNJ-DAVE-09/bob-ai-hackathon--TEAM-09.AI-"
+  live_demo: "https://bob-ai-hackathon-team-09-ai-supplyguard.onrender.com"
+  demo_video: "https://drive.google.com/file/d/1PyxqnKA-3XrTrG7h35XRdGccJJh-TOQN/view?usp=sharing"
+  screenshots: "https://1drv.ms/f/c/BFAD2F7354E8836E/IgBe1AHdpfjsT6WOjxcIg1RMAcpAmjZkXy0bLb3R58Z7flw?e=FwquWf"
+  presentation: "https://1drv.ms/b/c/BFAD2F7354E8836E/IQADX-LH7fpsQ6jO29vdmB8WAelhRyv6oalIEHaJ9qEoN5U?e=S7ZpRT"
+
+tech_stack:
+  languages: ["HTML5", "CSS3", "Vanilla JavaScript (ES2022)"]
+  libraries: ["Chart.js 4.4"]
+  ibm_technologies: ["IBM Bob"]
+  deployment: "Render"
+  version_control: "Git, GitHub"
+
+ibm_bob_usage:
+  - "AI Copilot for natural-language Q&A over live supply chain operational data"
+  - "Intent detection engine handling 20+ distinct operational query types"
+  - "Recovery plan narrative generation"
