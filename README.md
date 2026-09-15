@@ -108,7 +108,7 @@ npx serve .
 | Artifact | Link |
 |---|---|
 | 📹 Demo Video | [See demo/demo-video-link.txt](demo/demo-video-link.txt) |
-| 🌐 Live Demo | (https://bob-ai-hackathon-team-09-ai-supplyguard.onrender.com) |
+| 🌐 Live Demo | https://bob-ai-hackathon-team-09-ai-supplyguard.onrender.com |
 | 🖼️ Screenshots | [See demo/screenshots/](demo/screenshots/) |
 | 📊 Presentation | [See presentation/slides.pdf](presentation/) |
 
