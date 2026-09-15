@@ -79,8 +79,7 @@
 └── submission.yaml       # Structured submission metadata
 ```
 
----
-# ⚡ How to Run
+---# ⚡ How to Run
 
 > **Copy these exact steps from your [`docs/setup-guide.md`](docs/setup-guide.md)**
 
@@ -106,8 +105,8 @@ cp .env.example .env
 
 | Artifact | Link |
 |---|---|
-| 📹 Demo Video | [See demo/demo-video-link.txt]((https://drive.google.com/file/d/1PyxqnKA-3XrTrG7h35XRdGccJJh-TOQN/view?usp=sharing)) |
-| 🌐 Live Demo | [See demo/live-demo-url.txt]((https://bob-ai-hackathon-team-09-ai-supplyguard.onrender.com)) |
+| 📹 Demo Video | [See demo/demo-video-link.txt](demo/demo-video-link.txt) |
+| 🌐 Live Demo | [See demo/live-demo-url.txt](demo/live-demo-url.txt) |
 | 🖼️ Screenshots | [See demo/screenshots/](demo/screenshots/) |
 | 📊 Presentation | [See presentation/slides.pdf](presentation/) |
 
@@ -126,6 +125,8 @@ cp .env.example .env
 ## 🏅 What We're Most Proud Of
 
 [Tell the judges what part of your submission is strongest and worth paying close attention to.]
+
+
 
 ---
 
