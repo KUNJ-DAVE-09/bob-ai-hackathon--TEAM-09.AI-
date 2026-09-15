@@ -1,0 +1,71 @@
+name: Validate Submission
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check submission.yaml exists
+        run: |
+          if [ ! -f submission.yaml ]; then
+            echo "ERROR: submission.yaml not found"
+            exit 1
+          fi
+          echo "✅ submission.yaml exists"
+
+      - name: Validate submission.yaml is valid YAML and required fields are filled
+        run: |
+          python3 - <<'EOF'
+          import yaml, sys
+
+          with open("submission.yaml") as f:
+              data = yaml.safe_load(f)
+
+          errors = []
+
+          def check(val, path):
+              if val is None or str(val).strip() == "":
+                  errors.append(f"REQUIRED field is empty: {path}")
+
+          check(data.get("team", {}).get("name"), "team.name")
+          check(data.get("team", {}).get("track"), "team.track")
+          check(data.get("team", {}).get("lead", {}).get("name"), "team.lead.name")
+          check(data.get("team", {}).get("lead", {}).get("email"), "team.lead.email")
+          check(data.get("submission", {}).get("title"), "submission.title")
+          check(data.get("submission", {}).get("problem_statement"), "submission.problem_statement")
+          check(data.get("submission", {}).get("solution_summary"), "submission.solution_summary")
+
+          if errors:
+              for e in errors:
+                  print(f"ERROR: {e}")
+              sys.exit(1)
+
+          print("✅ submission.yaml is valid and all required fields are filled")
+          EOF
+
+      - name: Check docs/setup-guide.md exists
+        run: |
+          if [ ! -f docs/setup-guide.md ]; then
+            echo "ERROR: docs/setup-guide.md not found"
+            exit 1
+          fi
+          echo "✅ docs/setup-guide.md exists"
+
+      - name: Check demo/demo-video-link.txt exists
+        run: |
+          if [ ! -f demo/demo-video-link.txt ]; then
+            echo "ERROR: demo/demo-video-link.txt not found"
+            exit 1
+          fi
+          echo "✅ demo/demo-video-link.txt exists"
+
+      - name: All checks passed
+        run: echo "🎉 Submission validation complete — all checks passed!"

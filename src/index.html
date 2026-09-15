@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SupplyGuard AI — Supply Chain Dashboard</title>
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<!-- Leaflet Maps -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<!-- Styles -->
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <!-- Brand -->
+  <div class="sidebar-brand">
+    <div class="brand-icon">SG</div>
+    <div class="brand-text">
+      <div class="brand-name">SupplyGuard</div>
+      <div class="brand-sub">AI Dashboard</div>
+    </div>
+  </div>
+
+  <!-- Live indicator -->
+  <div class="sidebar-live">
+    <div class="live-dot"></div>
+    <span>Live Monitoring Active</span>
+  </div>
+
+  <!-- Nav links -->
+  <nav class="sidebar-nav">
+    <a class="nav-link active" data-view="dashboard">
+      <span class="nav-icon">📊</span>
+      <span class="nav-label">Dashboard</span>
+    </a>
+    <a class="nav-link" data-view="disruptions">
+      <span class="nav-icon">⚡</span>
+      <span class="nav-label">Disruptions</span>
+      <span class="nav-badge" id="nav-badge-disruptions"></span>
+    </a>
+    <a class="nav-link" data-view="shipments">
+      <span class="nav-icon">📦</span>
+      <span class="nav-label">Affected Shipments</span>
+    </a>
+    <a class="nav-link" data-view="newshipment">
+      <span class="nav-icon">➕</span>
+      <span class="nav-label">New Shipment</span>
+    </a>
+    <a class="nav-link" data-view="rerouting">
+      <span class="nav-icon">🔀</span>
+      <span class="nav-label">Rerouting</span>
+    </a>
+    <a class="nav-link" data-view="fleet">
+      <span class="nav-icon">🚛</span>
+      <span class="nav-label">Fleet Assets</span>
+    </a>
+    <a class="nav-link" data-view="coldchain">
+      <span class="nav-icon">🌡</span>
+      <span class="nav-label">Cold Chain IoT</span>
+    </a>
+    <a class="nav-link" data-view="copilot">
+      <span class="nav-icon">🤖</span>
+      <span class="nav-label">AI Copilot</span>
+    </a>
+    <a class="nav-link" data-view="recovery">
+      <span class="nav-icon">📋</span>
+      <span class="nav-label">Recovery Plan</span>
+    </a>
+  </nav>
+
+  <!-- Sidebar footer -->
+  <div class="sidebar-footer">
+    <button class="nav-icon-btn" id="bell-btn" title="Alerts">
+      🔔 <span class="nav-bell-badge" id="bell-badge">0</span>
+    </button>
+    <div class="sidebar-clock" id="topbar-clock">--:--:--</div>
+  </div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="main-content" id="main-content">
+  <div id="view-dashboard"   class="view active"></div>
+  <div id="view-disruptions" class="view"></div>
+  <div id="view-shipments"   class="view"></div>
+  <div id="view-newshipment" class="view"></div>
+  <div id="view-rerouting"   class="view"></div>
+  <div id="view-fleet"       class="view"></div>
+  <div id="view-coldchain"   class="view"></div>
+  <div id="view-copilot"     class="view"></div>
+  <div id="view-recovery"    class="view"></div>
+</main>
+
+<!-- ALERT DRAWER -->
+<div class="alert-drawer" id="alert-drawer">
+  <div class="drawer-header">
+    <span>Active Alerts</span>
+    <button id="drawer-close">✕</button>
+  </div>
+  <div id="drawer-body"></div>
+</div>
+<div class="drawer-overlay" id="drawer-overlay"></div>
+
+<!-- MODAL -->
+<div class="modal-bg" id="modal-bg">
+  <div class="modal-box" id="modal-box">
+    <button class="modal-close-btn" id="modal-close">✕</button>
+    <div id="modal-inner"></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast-container"></div>
+
+<script src="data.js"></script>
+<script src="views/dashboard.js"></script>
+<script src="views/disruptions.js"></script>
+<script src="views/shipments.js"></script>
+<script src="views/newshipment.js"></script>
+<script src="views/rerouting.js"></script>
+<script src="views/fleet.js"></script>
+<script src="views/coldchain.js"></script>
+<script src="views/copilot.js"></script>
+<script src="views/recovery.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

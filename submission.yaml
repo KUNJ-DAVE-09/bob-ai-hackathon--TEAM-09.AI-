@@ -1,0 +1,42 @@
+team:
+  name: "SupplyGuard AI"
+  track: "AI"
+  lead:
+    name: "Hackathon Lead"
+    email: "lead@supplyguard.ai"
+  members:
+    - name: "Developer One"
+      email: "dev1@supplyguard.ai"
+    - name: "Developer Two"
+      email: "dev2@supplyguard.ai"
+
+submission:
+  title: "SupplyGuard AI — Supply Chain Disruption Assistant"
+  problem_statement: >
+    Supply chain disruptions — weather events, port strikes, geopolitical crises —
+    cascade across hundreds of active shipments in ways that are impossible to track
+    manually. Fleet assets sit idle while other routes are overloaded, and cold-chain
+    shipments (vaccines, perishables) face catastrophic, undetected temperature excursions
+    that are only discovered at delivery — by which time a $500K+ cargo is already lost.
+  solution_summary: >
+    SupplyGuard AI is an IBM Bob-powered operations center that detects active disruptions,
+    identifies every affected shipment with AI-driven risk classification, recommends
+    optimal rerouting and carrier alternatives, redeploys idle fleet assets intelligently,
+    and monitors cold-chain IoT sensor streams in real time to catch temperature excursions
+    before delivery. A natural-language AI Copilot and an executive recovery plan generator
+    complete the end-to-end disruption response loop.
+  key_features:
+    - "Real-time disruption detection with severity classification (weather, port, geopolitical)"
+    - "AI risk scoring of all affected shipments (CRITICAL / HIGH / MEDIUM / LOW)"
+    - "Rerouting engine with cost/time trade-off recommendations and carrier alternatives"
+    - "Idle fleet asset redeployment optimizer with proximity and capacity matching"
+    - "Cold-chain IoT temperature monitoring with regulatory severity detection (WHO/FDA)"
+    - "Natural-language AI Copilot for operations Q&A and instant insights"
+    - "Executive Recovery Plan auto-generation with KPI impact summary"
+  tech_stack:
+    - "IBM Bob (AI Copilot integration)"
+    - "Vanilla JS (ES2022) — zero-framework, fully portable"
+    - "Chart.js 4.4 — live sensor charts and KPI visualizations"
+    - "HTML5 / CSS3 — responsive single-page application"
+    - "Simulated IoT sensor data streams (WebWorker-based)"
+    - "Rule-based AI decision engine (risk classification, rerouting, fleet optimization)"
