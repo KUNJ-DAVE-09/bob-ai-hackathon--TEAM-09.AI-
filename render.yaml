@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: supplyguard-ai
+    runtime: static
+    staticPublishPath: ./src
+    pullRequestPreviewsEnabled: true
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: no-cache
